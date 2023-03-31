@@ -6,15 +6,25 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44303
+          "Port": 7066
         }
       ],
-      "UpstreamPathTemplate": "/gateway/product",
+      "UpstreamPathTemplate": "/product",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/product/{productId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7066
+        }
+      ],
+      "UpstreamPathTemplate": "/product/{productId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE","PUT" ]
     }
-  ],
-  "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:5000"
-  }
+  ]
+
 }
 
