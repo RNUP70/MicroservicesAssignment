@@ -22,7 +22,19 @@
         }
       ],
       "UpstreamPathTemplate": "/product/{productId}",
-      "UpstreamHttpMethod": [ "GET", "DELETE","PUT" ]
+      "UpstreamHttpMethod": [ "GET", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/order",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7149
+        }
+      ],
+      "UpstreamPathTemplate": "/order",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
     }
   ]
 
